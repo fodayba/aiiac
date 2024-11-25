@@ -1,4 +1,5 @@
-import { Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ServicesComponent } from './pages/services/services.component';
@@ -8,8 +9,16 @@ import { ServiceDetailComponent } from './pages/services/service-detail/service-
 import { ProjectCategoryComponent } from './pages/projects/project-category/project-category.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
+  {
+    path: '',
+    component: HomeComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'about',
+    loadComponent: () => import('./pages/about/about.component')
+      .then(m => m.AboutComponent)
+  },
   { path: 'services', component: ServicesComponent },
   { path: 'projects', component: ProjectsComponent },
   { path: 'contact', component: ContactComponent },
@@ -17,3 +26,18 @@ export const routes: Routes = [
   { path: 'projects/:category', component: ProjectCategoryComponent },
   { path: '**', redirectTo: '' }
 ];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: PreloadAllModules,
+      scrollPositionRestoration: 'disabled',
+      anchorScrolling: 'enabled',
+      scrollOffset: [0, 64],
+      paramsInheritanceStrategy: 'always',
+      initialNavigation: 'enabledBlocking'
+    })
+  ],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

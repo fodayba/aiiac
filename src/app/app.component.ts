@@ -21,8 +21,8 @@ import { FooterComponent } from './shared/footer/footer.component';
   animations: [
     trigger('fadeAnimation', [
       transition('* => *', [
-        style({ opacity: 0 }),
-        animate('0.4s ease-out', style({ opacity: 1 }))
+        style({ opacity: 0.8 }),
+        animate('200ms ease-out', style({ opacity: 1 }))
       ])
     ])
   ]

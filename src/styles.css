@@ -211,3 +211,27 @@ a, button {
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-y: contain;
 }
+
+/* Smooth transitions */
+.router-wrapper {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Prevent layout shifts */
+main {
+  transform: translateZ(0);  /* Hardware acceleration */
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: opacity;  /* Hint to browser about animation */
+}
+
+/* Prevent content jump */
+body {
+  overflow-y: scroll;  /* Always show scrollbar to prevent layout shift */
+}
+
+/* Smooth image loading */
+img {
+  content-visibility: auto;
+}

@@ -25,7 +25,7 @@
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       <a *ngFor="let category of categories" 
          [routerLink]="['/projects', category.id]" 
-         class="group">
+         class="group">  
         <div class="aspect-[4/3] relative overflow-hidden mb-4">
           <img [src]="category.imageUrl" [alt]="category.title" 
                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
