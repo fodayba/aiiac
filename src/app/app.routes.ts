@@ -5,6 +5,7 @@ import { ServicesComponent } from './pages/services/services.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ServiceDetailComponent } from './pages/services/service-detail/service-detail.component';
+import { ProjectCategoryComponent } from './pages/projects/project-category/project-category.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,5 +14,6 @@ export const routes: Routes = [
   { path: 'projects', component: ProjectsComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'services/:id', component: ServiceDetailComponent },
+  { path: 'projects/:category', component: ProjectCategoryComponent },
   { path: '**', redirectTo: '' }
 ];

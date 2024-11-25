@@ -5,16 +5,11 @@
       <div class="space-y-4">
         <div class="flex items-center space-x-3 mb-6">
           <!-- Logo -->
-          <div class="relative w-10 h-10">
-            <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg"></div>
-            <div class="absolute inset-0 flex items-center justify-center">
-              <span class="text-white font-bold text-xl">A</span>
-            </div>
-          </div>
-          <div>
-            <span class="text-white font-bold text-xl">AIIAC</span>
-            <span class="text-blue-400 text-xs block -mt-1">ENGINEERING</span>
-          </div>
+          <a routerLink="/" class="group flex items-center">
+            <img src="assets/images/logo.svg" 
+                 alt="Engineering Logo" 
+                 class="h-10 transition-transform duration-300 group-hover:scale-105">
+          </a>
         </div>
         <p class="text-gray-400 text-sm">
           Leading engineering solutions provider in West Africa, delivering excellence in civil, mechanical, and mining engineering.
@@ -38,24 +33,56 @@
       <div>
         <h3 class="text-lg font-semibold mb-4">Our Services</h3>
         <ul class="space-y-2">
-          <li class="text-gray-400 text-sm">Civil Engineering</li>
-          <li class="text-gray-400 text-sm">Mechanical Engineering</li>
-          <li class="text-gray-400 text-sm">Mining Support Services</li>
-          <li class="text-gray-400 text-sm">Steel Fabrication</li>
+          <li>
+            <a [routerLink]="['/services', 'civil-engineering']" 
+               class="text-gray-400 hover:text-blue-400 transition-colors text-sm">
+              Civil Engineering
+            </a>
+          </li>
+          <li>
+            <a [routerLink]="['/services', 'construction-management']" 
+               class="text-gray-400 hover:text-blue-400 transition-colors text-sm">
+              Construction Management
+            </a>
+          </li>
+          <li>
+            <a [routerLink]="['/services', 'environmental']" 
+               class="text-gray-400 hover:text-blue-400 transition-colors text-sm">
+              Environmental Services
+            </a>
+          </li>
+          <li>
+            <a [routerLink]="['/services', 'mining-support']" 
+               class="text-gray-400 hover:text-blue-400 transition-colors text-sm">
+              Mining Support Services
+            </a>
+          </li>
         </ul>
       </div>
 
       <!-- Contact Info -->
       <div>
-        <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+        <h3 class="text-lg font-semibold mb-4">Our Locations</h3>
         <ul class="space-y-3">
-          <li class="flex items-start space-x-3 text-sm">
-            <i class="bi bi-geo-alt text-blue-400 mt-1"></i>
-            <span class="text-gray-400">Your Address Here</span>
+          <li>
+            <a href="https://maps.google.com/?q=18+Kandeh+Drive,+Off+Wilkinson+Road,+Freetown,+Sierra+Leone" 
+               target="_blank" 
+               class="flex items-start space-x-3 text-sm group hover:text-blue-400 transition-colors">
+              <i class="bi bi-geo-alt text-blue-400 mt-1"></i>
+              <span class="text-gray-400 group-hover:text-blue-400 transition-colors">
+                18 Kandeh Drive, Off Wilkinson Road, Freetown, Sierra Leone
+              </span>
+            </a>
           </li>
-          <li class="flex items-center space-x-3 text-sm">
-            <i class="bi bi-envelope text-blue-400"></i>
-            <span class="text-gray-400">info&#64;aiiac.com</span>
+          <li>
+            <a href="https://maps.google.com/?q=120+UN+Drive,+Mamba+Point,+Monrovia,+Liberia" 
+               target="_blank" 
+               class="flex items-start space-x-3 text-sm group hover:text-blue-400 transition-colors">
+              <i class="bi bi-geo-alt text-blue-400 mt-1"></i>
+              <span class="text-gray-400 group-hover:text-blue-400 transition-colors">
+                120 UN Drive, Mamba Point, Monrovia, Liberia
+              </span>
+            </a>
           </li>
         </ul>
       </div>

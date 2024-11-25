@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, RouterLink, ReactiveFormsModule],
   templateUrl: './contact.component.html'
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent {
   contactForm: FormGroup;
+  contactInfo = {
+    email: 'info@aiiac.ltd',
+    hours: 'Monday - Friday: 8:00 AM - 5:00 PM (GMT)',
+    liberiaAddress: 'Congo Town, Tubman Boulevard, Monrovia, Liberia',
+    liberiaPhone: '+231 XXX XXXX',
+    socials: {
+      linkedin: 'https://linkedin.com/company/aiiac',
+      facebook: 'https://facebook.com/aiiac'
+    }
+  };
   isSubmitting = false;
 
   constructor(private fb: FormBuilder) {
@@ -18,26 +29,15 @@ export class ContactComponent implements OnInit {
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', Validators.required],
+      service: ['', Validators.required],
       message: ['', Validators.required]
     });
   }
 
-  ngOnInit(): void {}
-
-  async onSubmit() {
+  onSubmit() {
     if (this.contactForm.valid) {
-      this.isSubmitting = true;
-      try {
-        // Add your form submission logic here
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        this.contactForm.reset();
-        alert('Message sent successfully!');
-      } catch (error) {
-        console.error('Error submitting form:', error);
-        alert('Error sending message. Please try again.');
-      } finally {
-        this.isSubmitting = false;
-      }
+      console.log(this.contactForm.value);
+      // Handle form submission
     }
   }
 }

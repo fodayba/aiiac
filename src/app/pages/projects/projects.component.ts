@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { RouterLink, RouterModule } from '@angular/router';
 
 interface ProjectCategory {
+  id: string;
   title: string;
   description: string;
   imageUrl: string;
-  route: string;
 }
 
 @Component({
@@ -18,40 +18,40 @@ interface ProjectCategory {
 export class ProjectsComponent {
   categories: ProjectCategory[] = [
     {
+      id: 'commercial',
       title: 'Commercial Building Projects',
       description: 'Office complexes, retail spaces, and industrial facilities',
-      imageUrl: '/assets/images/projects/commercial.jpg',
-      route: '/projects/commercial'
+      imageUrl: '/assets/images/projects/commercial.jpg'
     },
     {
+      id: 'residential',
       title: 'Residential Building Projects',
       description: 'Apartments, housing developments, and residential complexes',
-      imageUrl: '/assets/images/projects/residential.jpg',
-      route: '/projects/residential'
+      imageUrl: '/assets/images/projects/residential.jpg'
     },
     {
+      id: 'mining',
       title: 'Mining Support Engineering Projects',
       description: 'Mining infrastructure and support facilities',
-      imageUrl: '/assets/images/projects/mining.jpg',
-      route: '/projects/mining'
+      imageUrl: '/assets/images/projects/mining.jpg'
     },
     {
+      id: 'power',
       title: 'Power Generation Projects',
       description: 'Energy infrastructure and power generation facilities',
-      imageUrl: '/assets/images/projects/power.jpg',
-      route: '/projects/power'
+      imageUrl: '/assets/images/projects/power.jpg'
     },
     {
+      id: 'piping',
       title: 'Piping Projects',
       description: 'Industrial piping systems and infrastructure',
-      imageUrl: '/assets/images/projects/piping.jpg',
-      route: '/projects/piping'
+      imageUrl: '/assets/images/projects/piping.jpg'
     },
     {
+      id: 'steel',
       title: 'Steel Structure Fabrication & Erection',
       description: 'Structural steel works and fabrication projects',
-      imageUrl: '/assets/images/projects/steel.jpg',
-      route: '/projects/steel'
+      imageUrl: '/assets/images/projects/steel.jpg'
     }
   ];
 }

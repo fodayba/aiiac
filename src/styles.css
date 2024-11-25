@@ -3,6 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css");
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -81,6 +83,20 @@
     @apply px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-lg 
            hover:bg-blue-50 transition-all duration-300;
   }
+
+  .hero-image {
+    @apply w-full h-full object-cover;
+    animation: subtle-zoom 20s ease-out forwards;
+  }
+
+  .hero-overlay {
+    @apply absolute inset-0;
+    background: linear-gradient(90deg, 
+      rgba(15, 23, 42, 0.95) 0%,
+      rgba(15, 23, 42, 0.8) 50%,
+      rgba(15, 23, 42, 0.7) 100%
+    );
+  }
 }
 
 @keyframes float {
@@ -92,5 +108,14 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes subtle-zoom {
+  from {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1);
   }
 }
