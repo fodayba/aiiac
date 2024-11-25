@@ -8,18 +8,25 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    touch-action: manipulation;
+    -webkit-overflow-scrolling: touch;
   }
   
   body {
     @apply antialiased;
+    font-size: clamp(
+      var(--fluid-min-size)px,
+      calc(1rem + ((1vw - 4.16px) * 0.6944)),
+      var(--fluid-max-size)px
+    );
   }
 
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
   }
   
   h2 {
-    @apply text-3xl md:text-4xl font-bold leading-tight;
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold leading-tight;
   }
   
   .text-gradient {
@@ -118,4 +125,89 @@
   to {
     transform: scale(1);
   }
+}
+
+/* Responsive container padding */
+.container {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+
+/* Responsive text sizes */
+h1 {
+  @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
+}
+
+h2 {
+  @apply text-2xl sm:text-3xl md:text-4xl;
+}
+
+/* Responsive spacing */
+.section-padding {
+  @apply py-12 sm:py-16 md:py-24;
+}
+
+/* Responsive buttons */
+.btn-primary, .btn-secondary {
+  @apply w-full sm:w-auto text-center px-6 py-3 sm:px-8 sm:py-4;
+}
+
+/* Improve touch targets */
+button, a {
+  @apply cursor-pointer touch-manipulation;
+  min-height: 44px; /* iOS minimum touch target size */
+}
+
+/* Add fluid animations */
+.animate-transition {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Fluid typography using clamp */
+:root {
+  --fluid-min-width: 320;
+  --fluid-max-width: 1440;
+  --fluid-min-size: 14;
+  --fluid-max-size: 18;
+  --fluid-min-scale: 1.2;
+  --fluid-max-scale: 1.333;
+}
+
+body {
+  font-size: clamp(
+    var(--fluid-min-size)px,
+    calc(1rem + ((1vw - 4.16px) * 0.6944)),
+    var(--fluid-max-size)px
+  );
+}
+
+/* Touch-friendly improvements */
+html {
+  touch-action: manipulation;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Improve touch targets */
+a, button {
+  touch-action: manipulation;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Add smooth transitions */
+.touch-feedback {
+  @apply transition-transform active:scale-95;
+}
+
+/* Prevent text selection during touch */
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Improve scrolling */
+.smooth-scroll {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
 }
