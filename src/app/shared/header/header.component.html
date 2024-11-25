@@ -1,0 +1,72 @@
+<header [class.header-scrolled]="isScrolled" 
+        class="fixed w-full z-50 transition-all duration-300 bg-white/90">
+  <div class="container mx-auto px-4">
+    <nav class="flex items-center justify-between h-16 md:h-20">
+      <!-- Logo -->
+      <a routerLink="/" 
+         class="group flex items-center space-x-2 md:space-x-3">
+        <div class="relative w-8 h-8 md:w-10 md:h-10 transition-transform duration-300 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg shadow-md"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span class="text-white font-bold text-xl">A</span>
+          </div>
+        </div>
+        <div>
+          <span class="text-slate-900 font-bold text-lg md:text-xl">AIIAC</span>
+          <span class="text-blue-600 text-xs block -mt-1">ENGINEERING</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center space-x-8">
+        <a *ngFor="let item of navItems" 
+           [routerLink]="item.path" 
+           routerLinkActive="nav-active"
+           [routerLinkActiveOptions]="{exact: true}"
+           class="nav-link">
+          {{item.label}}
+        </a>
+        
+        <!-- CTA Button -->
+        <a routerLink="/contact" 
+           class="inline-flex items-center px-4 py-2 
+                  bg-gradient-to-r from-blue-600 to-blue-700 
+                  text-white text-sm font-medium rounded-lg 
+                  transition-all duration-300
+                  hover:-translate-y-0.5 hover:shadow-md
+                  active:translate-y-0">
+          Get Started
+          <i class="bi bi-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
+              (click)="toggleMobileMenu()">
+        <i [class]="isMobileMenuOpen ? 'bi bi-x text-2xl' : 'bi bi-list text-2xl'"></i>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="lg:hidden absolute left-0 right-0 top-16 bg-white/95 backdrop-blur-sm border-b border-slate-200"
+         [class.hidden]="!isMobileMenuOpen">
+      <nav class="container mx-auto px-4 py-4">
+        <div class="space-y-1">
+          <a *ngFor="let item of navItems"
+             [routerLink]="item.path"
+             routerLinkActive="text-blue-600 bg-blue-50"
+             [routerLinkActiveOptions]="{exact: true}"
+             class="block px-4 py-3 rounded-lg text-slate-900 hover:bg-slate-50 transition-colors"
+             (click)="toggleMobileMenu()">
+            {{item.label}}
+          </a>
+          <a routerLink="/contact"
+             class="block px-4 py-3 mt-2 bg-blue-600 text-white text-center rounded-lg hover:bg-blue-700 transition-colors"
+             (click)="toggleMobileMenu()">
+            Get Started
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>

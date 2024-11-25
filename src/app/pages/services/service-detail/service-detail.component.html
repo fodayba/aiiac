@@ -1,0 +1,111 @@
+<!-- Hero Section -->
+<section class="relative bg-slate-900 min-h-[60vh] flex items-center">
+  <div class="absolute inset-0">
+    <img [src]="'assets/images/services/' + service.slug + '.jpg'" 
+         [alt]="service.title"
+         class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-900/95 to-slate-900/70"></div>
+  </div>
+  
+  <div class="container mx-auto px-6 relative">
+    <div class="max-w-3xl">
+      <span class="inline-block py-2 px-4 border border-white/20 text-sm tracking-wider text-white/80 mb-8">
+        OUR SERVICES
+      </span>
+      <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+        {{service.title}}
+      </h1>
+      <p class="text-xl text-white/80 leading-relaxed">
+        {{service.description}}
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-24 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+      <!-- Left Column -->
+      <div>
+        <span class="text-sm tracking-wider text-blue-600 mb-6 block">CAPABILITIES</span>
+        <h2 class="text-3xl font-bold text-slate-900 mb-8">Key Features</h2>
+        <div class="space-y-6">
+          <div *ngFor="let feature of service.features" 
+               class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+              <i class="bi bi-check2 text-blue-600"></i>
+            </div>
+            <p class="text-lg text-gray-600">{{feature}}</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Column -->
+      <div>
+        <span class="text-sm tracking-wider text-blue-600 mb-6 block">ADVANTAGES</span>
+        <h2 class="text-3xl font-bold text-slate-900 mb-8">Benefits</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div *ngFor="let benefit of service.benefits"
+               class="p-6 bg-slate-50 rounded-xl hover:bg-white hover:shadow-elevation-1 transition-all duration-300">
+            <p class="text-gray-600">{{benefit}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process Section -->
+<section class="py-24 bg-slate-50">
+  <div class="container mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-sm tracking-wider text-blue-600 mb-6 block">OUR APPROACH</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+        How We Work
+      </h2>
+      <p class="text-lg text-gray-600">
+        Our structured approach ensures consistent, high-quality results
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div *ngFor="let process of service.processes; let i = index" 
+           class="relative group">
+        <!-- Number -->
+        <div class="absolute -top-4 -left-4 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
+          {{i + 1}}
+        </div>
+        <!-- Content -->
+        <div class="p-8 bg-white rounded-xl shadow-elevation-1 hover:shadow-elevation-hover transition-all duration-300 h-full">
+          <h3 class="text-xl font-semibold text-slate-900 mb-4">{{process.title}}</h3>
+          <p class="text-gray-600">{{process.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-24 bg-slate-900 relative overflow-hidden">
+  <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+  <div class="container mx-auto px-6 relative">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+        Ready to Get Started?
+      </h2>
+      <p class="text-xl text-gray-300 mb-12">
+        Contact us to discuss how we can help with your next project
+      </p>
+      <a routerLink="/contact" 
+         class="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 
+                text-white rounded-lg transition-colors group">
+        Contact Us
+        <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" 
+             fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section> 

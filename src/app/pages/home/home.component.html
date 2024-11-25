@@ -1,0 +1,155 @@
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center">
+  <div class="absolute inset-0">
+    <img src="assets/images/hero-engineering.jpg" alt="AIIAC Engineering" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-900/95 to-slate-900/70"></div>
+  </div>
+
+  <div class="container mx-auto px-6 relative">
+    <div class="max-w-4xl">
+      <span class="inline-block py-2 px-4 border border-white/20 text-sm tracking-wider text-white/80 mb-8 animate-fade-in">
+        ENGINEERING EXCELLENCE IN WEST AFRICA
+      </span>
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-8 animate-slide-up">
+        Engineering Solutions for Complex Industrial Challenges
+      </h1>
+      <p class="text-xl text-white/90 leading-relaxed max-w-2xl mb-12 animate-slide-up" style="animation-delay: 200ms">
+        Delivering comprehensive engineering and construction solutions across Sierra Leone and Liberia
+      </p>
+      <div class="flex flex-wrap gap-4 animate-slide-up" style="animation-delay: 400ms">
+        <a href="/contact" class="btn-primary">
+          Discuss Your Project
+        </a>
+        <a href="/services" class="btn-secondary">
+          Explore Our Services
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core Services Section -->
+<section class="py-24 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+      <!-- Left Column -->
+      <div class="space-y-8">
+        <span class="text-sm tracking-wider text-blue-600">OUR EXPERTISE</span>
+        <h2 class="text-4xl font-bold text-slate-900 leading-tight">
+          Comprehensive Engineering & Construction Solutions
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          From civil engineering to power generation, we deliver end-to-end solutions that drive industrial progress across West Africa.
+        </p>
+        <div class="flex items-center gap-8 pt-4">
+          <div class="text-center">
+            <span class="block text-3xl font-bold text-blue-600">15+</span>
+            <span class="text-sm text-gray-600">Years Experience</span>
+          </div>
+          <div class="text-center">
+            <span class="block text-3xl font-bold text-blue-600">100+</span>
+            <span class="text-sm text-gray-600">Projects Completed</span>
+          </div>
+          <div class="text-center">
+            <span class="block text-3xl font-bold text-blue-600">2</span>
+            <span class="text-sm text-gray-600">Countries Served</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="grid grid-cols-2 gap-6">
+        <div *ngFor="let service of coreServices" 
+             class="p-6 bg-slate-50 rounded-xl hover:bg-white hover:shadow-elevation-1 transition-all duration-300">
+          <i [class]="service.icon + ' text-2xl text-blue-600 mb-4 block'"></i>
+          <h3 class="text-lg font-semibold text-slate-900 mb-2">{{service.title}}</h3>
+          <p class="text-sm text-gray-600">{{service.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Industries Section -->
+<section class="py-24 bg-slate-50">
+  <div class="container mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-sm tracking-wider text-blue-600 mb-6 block">INDUSTRIES WE SERVE</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+        Specialized Solutions for Key Industries
+      </h2>
+      <p class="text-lg text-gray-600">
+        We provide tailored engineering solutions across multiple sectors
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div *ngFor="let industry of industries" 
+           class="group relative overflow-hidden rounded-xl shadow-elevation-1">
+        <div class="aspect-video relative">
+          <img [src]="industry.image" [alt]="industry.name" 
+               class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent"></div>
+          <div class="absolute bottom-0 p-6">
+            <h3 class="text-xl font-bold text-white mb-2">{{industry.name}}</h3>
+            <p class="text-white/80 text-sm">{{industry.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Clients Section -->
+<section class="py-24 bg-slate-50 relative overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 bg-grid-pattern opacity-50"></div>
+  
+  <div class="container mx-auto px-6 relative">
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-sm tracking-wider text-blue-600 mb-6 block animate-fade-in">
+        OUR CLIENTS
+      </span>
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+        Trusted by Industry Leaders
+      </h2>
+      <p class="text-lg text-gray-600">
+        We work with leading companies across West Africa's industrial landscape
+      </p>
+    </div>
+
+    <!-- Clients Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+      <div *ngFor="let client of clients; let i = index"
+           class="group bg-white rounded-xl p-8 shadow-elevation-1 hover:shadow-elevation-hover 
+                  transition-all duration-300 animate-fade-in"
+           [style.animation-delay]="i * 100 + 'ms'">
+        <!-- Icon -->
+        <div class="mb-6">
+          <i [class]="client.logo + ' text-4xl text-blue-500 group-hover:text-blue-600 transition-colors'"></i>
+        </div>
+        
+        <!-- Content -->
+        <h3 class="text-xl font-semibold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+          {{client.name}}
+        </h3>
+        <p class="text-gray-600">
+          {{client.description}}
+        </p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-16">
+      <a routerLink="/contact" 
+         class="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium group">
+        Become Our Client
+        <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" 
+             fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

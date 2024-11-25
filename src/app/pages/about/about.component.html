@@ -1,0 +1,206 @@
+<!-- Hero Section -->
+<section class="relative min-h-[80vh] flex items-center">
+  <div class="absolute inset-0">
+    <img 
+      src="assets/images/about-hero.jpg" 
+      alt="AIIAC Engineering" 
+      class="w-full h-full object-cover"
+    >
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-900/95 to-slate-900/70"></div>
+  </div>
+
+  <div class="container mx-auto px-6 relative">
+    <div class="max-w-4xl">
+      <h1 class="text-7xl md:text-8xl font-bold text-white leading-tight mb-8">
+        About us
+      </h1>
+      <p class="text-2xl text-white/90 leading-relaxed max-w-2xl">
+        We are a collective of engineers and technical experts using innovation and expertise to shape West Africa's sustainable future.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Values Section -->
+<section class="py-24 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div>
+        <h2 class="text-4xl font-bold text-slate-900 mb-8">
+          At AIIAC, we make West Africa smarter, more connected and more sustainable.
+        </h2>
+        <div class="space-y-6">
+          <div class="space-y-4">
+            <h3 class="text-xl font-bold text-slate-900">We do things right</h3>
+            <p class="text-gray-600">We act with integrity, taking responsibility for our work, caring for our people, and staying focused on safety and sustainability.</p>
+          </div>
+          <div class="space-y-4">
+            <h3 class="text-xl font-bold text-slate-900">We challenge the accepted</h3>
+            <p class="text-gray-600">We ask difficult questions and stay curious, always seeking innovative solutions to complex challenges.</p>
+          </div>
+          <div class="space-y-4">
+            <h3 class="text-xl font-bold text-slate-900">We aim higher</h3>
+            <p class="text-gray-600">We never settle, always looking beyond to raise the bar and deliver excellence in everything we do.</p>
+          </div>
+        </div>
+      </div>
+      <div class="relative">
+        <img 
+          src="assets/images/about/values.jpg" 
+          alt="AIIAC Engineering team" 
+          class="rounded-lg shadow-xl"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="py-24 bg-slate-50">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+      <div class="text-center">
+        <div class="text-5xl font-bold text-blue-600 mb-2">10+</div>
+        <p class="text-gray-600">Years of Experience</p>
+      </div>
+      <div class="text-center">
+        <div class="text-5xl font-bold text-blue-600 mb-2">50+</div>
+        <p class="text-gray-600">Projects Completed</p>
+      </div>
+      <div class="text-center">
+        <div class="text-5xl font-bold text-blue-600 mb-2">100+</div>
+        <p class="text-gray-600">Team Members</p>
+      </div>
+      <div class="text-center">
+        <div class="text-5xl font-bold text-blue-600 mb-2">4</div>
+        <p class="text-gray-600">Countries Served</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline Section -->
+<section class="py-24 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <span class="text-sm tracking-wider text-blue-600">OUR JOURNEY</span>
+      <h2 class="text-4xl font-bold text-slate-900 mt-4 mb-6">
+        Company History
+      </h2>
+    </div>
+
+    <div class="max-w-4xl mx-auto relative">
+      <!-- Timeline Line -->
+      <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-blue-100"></div>
+
+      <div class="space-y-16">
+        <div *ngFor="let event of timeline; let i = index" 
+             class="relative flex flex-col md:flex-row items-center"
+             [ngClass]="{'md:flex-row-reverse': i % 2 !== 0}">
+          <!-- Timeline Dot -->
+          <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-blue-600 border-4 border-white"></div>
+          
+          <!-- Content -->
+          <div class="md:w-5/12" [ngClass]="{'md:text-right': i % 2 === 0}">
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+              <div class="text-xl font-bold text-blue-600 mb-2">{{event.year}}</div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">{{event.title}}</h3>
+              <p class="text-gray-600">{{event.description}}</p>
+            </div>
+          </div>
+          
+          <!-- Spacer -->
+          <div class="md:w-2/12"></div>
+          
+          <!-- Empty space for alternating layout -->
+          <div class="md:w-5/12"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Leadership Section -->
+<section class="py-24 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <span class="text-sm tracking-wider text-blue-600">OUR LEADERSHIP</span>
+      <h2 class="text-4xl font-bold text-slate-900 mt-4">
+        Executive Team
+      </h2>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <!-- Anthony Sawyerr -->
+      <div class="group">
+        <div class="relative overflow-hidden">
+          <img src="assets/images/team/anthony-sawyerr.jpg" 
+               alt="Anthony Sawyerr"
+               class="w-full aspect-square object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent 
+                      opacity-0 group-hover:opacity-100 transition-opacity">
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <div class="flex space-x-4 text-white">
+                <a href="https://www.linkedin.com/in/anthony-sawyerr" 
+                   target="_blank"
+                   class="hover:text-blue-400 transition-colors">
+                  <i class="fab fa-linkedin text-xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p-6">
+          <h3 class="text-xl font-bold text-slate-900">Anthony Sawyerr</h3>
+          <p class="text-gray-600">Director of Operations</p>
+        </div>
+      </div>
+
+      <!-- Ahmad Wurie -->
+      <div class="group">
+        <div class="relative overflow-hidden">
+          <img src="assets/images/team/ahmad-wurie.jpg" 
+               alt="Ahmad Wurie"
+               class="w-full aspect-square object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent 
+                      opacity-0 group-hover:opacity-100 transition-opacity">
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <div class="flex space-x-4 text-white">
+                <a href="https://www.linkedin.com/in/ahmad-wurie" 
+                   target="_blank"
+                   class="hover:text-blue-400 transition-colors">
+                  <i class="fab fa-linkedin text-xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p-6">
+          <h3 class="text-xl font-bold text-slate-900">Ahmad Wurie</h3>
+          <p class="text-gray-600">Director of Projects</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications Section -->
+<section class="py-24 bg-slate-50">
+  <div class="container mx-auto px-6">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <span class="text-sm tracking-wider text-blue-600">ACCREDITATIONS</span>
+      <h2 class="text-4xl font-bold text-slate-900 mt-4">
+        Our Standards
+      </h2>
+    </div>
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+      <div *ngFor="let cert of certifications" 
+           class="p-6 flex items-center justify-center">
+        <img [src]="cert.imageUrl" 
+             [alt]="cert.name"
+             class="max-h-20 grayscale hover:grayscale-0 transition-all">
+      </div>
+    </div>
+  </div>
+</section>

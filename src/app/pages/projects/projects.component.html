@@ -1,0 +1,87 @@
+<!-- Hero Section -->
+<section class="relative min-h-[60vh] flex items-center">
+  <div class="absolute inset-0">
+    <img 
+      src="/assets/images/projects-hero.jpg" 
+      alt="AIIAC Engineering Projects" 
+      class="w-full h-full object-cover"
+    >
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-900/95 to-slate-900/70"></div>
+  </div>
+
+  <div class="container mx-auto px-6 relative">
+    <div class="max-w-4xl">
+      <h1 class="text-7xl font-bold text-white leading-tight mb-8">
+        Projects
+      </h1>
+      <p class="text-2xl text-white/90 leading-relaxed max-w-2xl">
+        From infrastructure development to sustainable solutions, our projects are shaping West Africa's future. Discover the range of work we do.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Project Categories -->
+<section class="py-24 bg-slate-50">
+  <div class="container mx-auto px-6">
+    <h2 class="text-2xl font-bold mb-12">Explore our projects by category:</h2>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <a *ngFor="let category of categories" [routerLink]="[category.route]" class="group">
+        <div class="aspect-[4/3] relative overflow-hidden mb-4">
+          <img [src]="category.imageUrl" [alt]="category.title" 
+               class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+            <div class="absolute bottom-0 p-6">
+              <span class="text-white/90 text-sm">View Projects →</span>
+            </div>
+          </div>
+        </div>
+        <h3 class="text-xl font-bold group-hover:text-blue-600 transition-colors">{{category.title}}</h3>
+        <p class="text-gray-600 mt-2">{{category.description}}</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Sustainability Section -->
+<section class="py-24 bg-white">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-12">Explore our work to decarbonise the built environment</h2>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Sustainability Project 1 -->
+      <div class="group cursor-pointer">
+        <div class="relative aspect-[4/3] overflow-hidden mb-4">
+          <img src="/assets/images/projects/sustainability1.jpg" alt="Sustainability Project" 
+               class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-xl font-bold group-hover:text-blue-600 transition-colors">Renewable Energy Implementation</h3>
+        <p class="text-gray-600 mt-2">Leading the transition to sustainable energy solutions</p>
+      </div>
+      <!-- Add more sustainability projects -->
+    </div>
+  </div>
+</section>
+
+<!-- Resilience Section -->
+<section class="py-24 bg-slate-50">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-12">Explore our work building resilience globally</h2>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Resilience Project Cards -->
+    </div>
+  </div>
+</section>
+
+<!-- Social Impact Section -->
+<section class="py-24 bg-white">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-12">Explore our projects creating an impact on the lives of people</h2>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Social Impact Project Cards -->
+    </div>
+  </div>
+</section>
