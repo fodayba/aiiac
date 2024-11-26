@@ -1,68 +1,48 @@
-<header [class.header-scrolled]="isScrolled" 
-        class="fixed w-full z-50 transition-all duration-300 bg-white/90">
-  <div class="container mx-auto px-4">
-    <nav class="flex items-center justify-between h-16 md:h-20">
+<header class="fixed w-full top-0 z-50 transition-all duration-300"
+        [ngClass]="{'glass-effect': isScrolled}">
+  <nav class="container mx-auto px-6 py-5">
+    <div class="flex items-center h-8">
       <!-- Logo -->
-      <a routerLink="/" class="group flex items-center space-x-3">
-        <img src="assets/images/logo.svg" 
-             alt="AIIAC Engineering" 
-             class="h-10 md:h-12 transition-transform duration-300 group-hover:scale-105">
+      <a routerLink="/" class="flex items-center">
+        <img src="assets/images/logo.svg" alt="AIIAC" class="h-8 w-auto">
       </a>
 
-      <!-- Desktop Navigation -->
-      <div class="hidden lg:flex items-center space-x-8">
+      <!-- Desktop Navigation - Centered -->
+      <div class="hidden md:flex items-center justify-center flex-1 space-x-8">
         <a *ngFor="let item of navItems" 
-           [routerLink]="item.path" 
-           routerLinkActive="nav-active"
-           [routerLinkActiveOptions]="{exact: true}"
-           class="nav-link">
+           [routerLink]="item.path"
+           routerLinkActive="text-blue-600"
+           class="animated-underline text-gray-700 hover:text-blue-600 transition-colors">
           {{item.label}}
         </a>
-        
-        <!-- CTA Button -->
-        <a routerLink="/contact" 
-           class="inline-flex items-center px-4 py-2 
-                  bg-gradient-to-r from-blue-600 to-blue-700 
-                  text-white text-sm font-medium rounded-lg 
-                  transition-all duration-300
-                  hover:-translate-y-0.5 hover:shadow-md
-                  active:translate-y-0">
-          Get Started
-          <i class="bi bi-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
-        </a>
       </div>
+
+      <!-- Contact Button - Right -->
+      <a routerLink="/contact" 
+         class="hidden md:inline-flex items-center h-8 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+        Contact Us
+      </a>
 
       <!-- Mobile Menu Button -->
-      <button class="lg:hidden p-2.5 rounded-lg bg-slate-100 hover:bg-slate-200 transition-colors"
-              (click)="toggleMobileMenu()">
-        <i [class]="isMobileMenuOpen ? 'bi bi-x text-2xl text-slate-900' : 'bi bi-list text-2xl text-slate-900'"></i>
+      <button class="md:hidden ml-auto h-8" (click)="toggleMobileMenu()">
+        <i class="bi bi-list text-2xl"></i>
       </button>
-    </nav>
+    </div>
 
     <!-- Mobile Menu -->
-    <div class="lg:hidden fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-40 transition-opacity duration-300 touch-none"
-         [class.opacity-0]="!isMobileMenuOpen"
-         [class.opacity-100]="isMobileMenuOpen"
-         [class.pointer-events-none]="!isMobileMenuOpen"
-         (click)="toggleMobileMenu()">
-      <div class="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-lg transition-transform duration-300 smooth-scroll"
-           [class.translate-x-full]="!isMobileMenuOpen"
-           [class.translate-x-0]="isMobileMenuOpen"
-           (click)="$event.stopPropagation()">
-        <nav class="h-full overflow-y-auto overscroll-contain">
-          <div class="p-4 space-y-2">
-            <a *ngFor="let item of navItems"
-               [routerLink]="item.path"
-               routerLinkActive="text-blue-600 bg-blue-50"
-               [routerLinkActiveOptions]="{exact: true}"
-               class="block px-4 py-3 rounded-lg text-slate-900 hover:bg-slate-50 
-                      transition-colors touch-manipulation no-select touch-feedback"
-               (click)="toggleMobileMenu()">
-              {{item.label}}
-            </a>
-          </div>
-        </nav>
+    <div *ngIf="isMobileMenuOpen" class="md:hidden mt-4">
+      <div class="flex flex-col space-y-4">
+        <a *ngFor="let item of navItems" 
+           [routerLink]="item.path"
+           routerLinkActive="text-blue-600"
+           class="text-gray-700 hover:text-blue-600 transition-colors py-2">
+          {{item.label}}
+        </a>
+        <a routerLink="/contact" 
+           class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+          Contact Us
+        </a>
       </div>
     </div>
-  </div>
+  </nav>
 </header>

@@ -30,7 +30,8 @@ module.exports = {
           700: '#1e40af',
           800: '#1e3a8a',
           900: '#1e3a8a',
-        }
+        },
+        primary: '#your-primary-color-here'
       },
       backgroundImage: {
         'grid-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239fa6b2' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
@@ -43,7 +44,7 @@ module.exports = {
         'slide-in-right': 'slideRight 0.5s ease-out',
         'slide-in-left': 'slideLeft 0.5s ease-out',
         'scale-in': 'scaleIn 0.5s ease-out',
-        'float': 'float 3s ease-in-out infinite',
+        'float': 'float 6s ease-in-out infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'bounce-gentle': 'bounceGentle 2s ease-in-out infinite',
         'spin-slow': 'spin 4s linear infinite',
@@ -86,6 +87,7 @@ module.exports = {
         'glow': '0 0 15px rgba(59, 130, 246, 0.5)',
         'glow-lg': '0 0 30px rgba(59, 130, 246, 0.5)',
         'inner-glow': 'inset 0 2px 4px 0 rgba(59, 130, 246, 0.1)',
+        'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
       },
       transitionTimingFunction: {
         'bounce-gentle': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
@@ -95,6 +97,9 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
+  ]
 }
 

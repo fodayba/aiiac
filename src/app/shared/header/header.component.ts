@@ -1,6 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { TranslationService } from '../../services/translation.service';
 
 interface NavItem {
   label: string;
@@ -19,11 +20,14 @@ export class HeaderComponent {
   isScrolled = false;
   
   navItems: NavItem[] = [
-    { label: 'Home', path: '/' },
     { label: 'About', path: '/about' },
     { label: 'Services', path: '/services' },
-    { label: 'Projects', path: '/projects' }
+    { label: 'Projects', path: '/projects' },
   ];
+
+  constructor(private translationService: TranslationService) {
+    // Translation service will auto-detect locale
+  }
 
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;

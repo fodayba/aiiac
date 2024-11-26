@@ -25,6 +25,15 @@ export function app(): express.Express {
     index: 'index.html',
   }));
 
+  // Serve robots.txt and sitemap.xml from root
+  server.get('/robots.txt', (req, res) => {
+    res.sendFile(join(browserDistFolder, 'robots.txt'));
+  });
+
+  server.get('/sitemap.xml', (req, res) => {
+    res.sendFile(join(browserDistFolder, 'sitemap.xml'));
+  });
+
   // All regular routes use the Angular engine
   server.get('**', (req, res, next) => {
     const { protocol, originalUrl, baseUrl, headers } = req;

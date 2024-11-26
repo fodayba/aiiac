@@ -1,0 +1,54 @@
+/* Modern Card Styles */
+.modern-card {
+  @apply bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Gradient Text */
+.gradient-text {
+  @apply text-transparent bg-clip-text;
+  background-image: linear-gradient(to right, #2563eb, #3b82f6);
+}
+
+/* Glass Effect */
+.glass-effect {
+  @apply bg-white/80 backdrop-blur-md;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Button Styles */
+.btn-primary {
+  @apply px-6 py-3 rounded-lg font-medium transition-all duration-300;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  
+  &:hover {
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+  }
+}
+
+/* Animated Underline */
+.animated-underline {
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, #2563eb, #3b82f6);
+    transition: width 0.3s ease;
+  }
+  
+  &:hover::after {
+    width: 100%;
+  }
+} 
