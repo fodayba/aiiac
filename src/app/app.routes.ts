@@ -6,8 +6,6 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ServiceDetailComponent } from './pages/services/service-detail/service-detail.component';
 import { ProjectCategoryComponent } from './pages/projects/project-category/project-category.component';
-import { CareersComponent } from './pages/careers/careers.component';
-import { JobDetailComponent } from './pages/careers/job-detail/job-detail.component';
 
 export const routes: Routes = [
   {
@@ -35,14 +33,6 @@ export const routes: Routes = [
   { 
     path: 'projects/:category', 
     component: ProjectCategoryComponent 
-  },
-  { 
-    path: 'careers', 
-    component: CareersComponent 
-  },
-  { 
-    path: 'careers/:id', 
-    component: JobDetailComponent 
   },
   { 
     path: 'contact', 
