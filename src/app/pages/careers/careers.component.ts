@@ -1,8 +1,7 @@
-import { Component, OnInit, AfterViewInit, ElementRef, ViewChildren, QueryList } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterModule } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { SEOService } from '../../services/seo.service';
-import { TranslationService } from '../../services/translation.service';
 
 interface JobPosition {
   id: string;
