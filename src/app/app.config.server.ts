@@ -4,7 +4,11 @@ import { appConfig } from './app.config';
 
 const serverConfig: ApplicationConfig = {
   providers: [
-    provideServerRendering()
+    provideServerRendering(),
+    {
+      provide: 'LOCALE',
+      useValue: 'en' // Default server locale
+    }
   ]
 };
 
