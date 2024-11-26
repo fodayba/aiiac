@@ -1,7 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { TranslationService } from '../../services/translation.service';
+
 
 interface NavItem {
   label: string;
@@ -25,9 +25,6 @@ export class HeaderComponent {
     { label: 'Projects', path: '/projects' },
   ];
 
-  constructor(private translationService: TranslationService) {
-    // Translation service will auto-detect locale
-  }
 
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
