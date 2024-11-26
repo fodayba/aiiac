@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { PlatformService } from './platform.service';
 
 interface SEOConfig {
   title: string;
@@ -15,10 +16,15 @@ interface SEOConfig {
 export class SEOService {
   constructor(
     private meta: Meta,
-    private titleService: Title
+    private titleService: Title,
+    private platformService: PlatformService
   ) {}
 
   updateMetaTags(config: SEOConfig) {
+    if (!this.platformService.isBrowser()) {
+      return; // Skip meta updates during SSR
+    }
+
     // Set basic meta tags
     this.titleService.setTitle(`${config.title} | AIIAC`);
     this.meta.updateTag({ name: 'description', content: config.description });
